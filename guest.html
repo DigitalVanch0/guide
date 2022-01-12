@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+</head>
+<body>
+<div class="container-fluid bg">
+		<div class="container">
+			<!-- mobile_search -->
+			<div class="row align-items-center mobile_search" data-aos="zoom-in" data-aos-duration="500">
+				<div class="col-sm-8">
+					<div class="col_bg">
+						<form method="GET" action="phone_search">
+						<span>Поиск по номеру</span>
+						<input name="phone" type="tel" placeholder="Введите номер телефона">
+						<button><img src="img/click.png" alt="send"></button>
+							</form>
+					</div>
+				</div>
+				<div class="col-sm-2 reglog">
+					<button type="button" class="print_all" data-bs-toggle="modal" data-bs-target="#enterModal">Вход</button>
+				</div>
+				<div class="col-sm-2 reglog">
+					<button type="button" class="print_all" data-bs-toggle="modal" data-bs-target="#regModal">Регистрация</button>
+				</div>
+
+			</div>
+
+          <!-- main_search -->
+			<div class="row main_search" data-aos="zoom-in" data-aos-duration="500">
+				<div class="col-sm top-0 start-0">
+					<form method="get" action="get_all_user">
+					<button class="print_all">Вывести всех</button>
+					</form>
+				</div>
+				<div class="col-sm-7 top-0 start-50 name_search">
+					<form method="get" action="fio_search">
+					<span>Найти фамилию</span>
+					<input name="fio" type="text" placeholder="Введите фамилию">
+						<button><img src="img/click.png" alt="send"></button>
+					</form>
+
+				</div>
+				<div class="col-sm-3 top-0 end-0">
+					<form method="post" action="read_post">
+					<button class="print_all">Вывести должности</button>
+					</form>
+				</div>
+			</div>
+
+          			<div class="row main_table" data-aos="zoom-in" data-aos-duration="500">
+				<table class="table table-hover align-middle table-sm table_conf">
+				  <thead class="table-dark">
+				    <tr>
+				      <th scope="col">#</th>
+				      <th scope="col">Fio</th>
+				      <th scope="col">Birth</th>
+				      <th scope="col">phone</th>
+				      <th scope="col">post</th>
+				      <th scope="col">department</th>
+				      <th scope="col">test3</th>
+				      <th scope="col">test4</th>
+				      <th scope="col">Controls</th>
+				    </tr>
+				  </thead>
+				  <tbody>
+				  {% for i in result %}
+				    <tr>
+				      <th scope="row">{{i.0}}</th>
+				      <td>{{i.1}}</td>
+				      <td>{{i.2}}</td>
+				      <td>{{i.3}}</td>
+				      <td>{{i.4}}</td>
+				      <td>{{i.5}}</td>
+				      <td>{{i.6}}</td>
+				      <td>{{i.7}}</td>
+				      <td>
+
+				      	<button class="control_button" type="button" data-bs-toggle="modal" data-bs-target="#editUser">Изменить</button>
+
+				      </td>
+
+				    {% endfor %}
+				  </tbody>
+				</table>
+			</div>
+
+          <form action="input" method="get">
+<div class="modal fade" id="enterModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-body enter_modal ">
+
+
+      	<div class="row login">
+      		<div class="col-sm">
+      			<span>Логин :</span>
+      			<input name="login" type="text">
+      		</div>
+      	</div>
+
+      	<div class="row pass">
+      		<div class="col-sm">
+      			<span>Пароль :</span>
+      			<input name="password" type="password">
+      		</div>
+      	</div>
+
+
+      	<div class="row complete">
+      		<div class="col-sm">
+      			<button>Вход</button>
+      		</div>
+      	</div>
+
+      </div>
+    </div>
+  </div>
+</div>
+	</form>
+
+<!-- REG Modal -->
+	<form method="get" action="registration" >
+<div class="modal fade" id="regModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-body enter_modal ">
+
+      	<div class="row login">
+      		<div class="col-sm">
+      			<span>Логин :</span>
+      			<input name="login" type="text">
+      		</div>
+      	</div>
+
+      	<div class="row pass">
+      		<div class="col-sm">
+      			<span>Пароль :</span>
+      			<input name="password" type="password">
+      		</div>
+      	</div>
+
+      	<div class="row complete">
+      		<div class="col-sm">
+      			<button>Зарегестрироваться</button>
+      		</div>
+      	</div>
+
+      </div>
+    </div>
+  </div>
+</div>
+	</form>
+</body>
+</html>
