@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>LiveJournal</title>
+
+	<!-- bootstrap css -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+
+	<!-- AOS CSS -->
+	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="css/index.css">
+
+	<!-- fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&display=swap" rel="stylesheet">
+
+
+</head>
+<body>
+
+	<div class="container-fluid bg">
+		<div class="container">
+			<!-- mobile_search -->
+			<div class="row align-items-center mobile_search" data-aos="zoom-in" data-aos-duration="500">
+				<div class="col-sm-8">
+					<div class="col_bg">
+						<form method="GET" action="phone_search">
+						<span>Поиск по номеру</span>
+						<input name="phone" type="tel" placeholder="Введите номер телефона">
+						<button><img src="img/click.png" alt="send"></button>
+							</form>
+					</div>
+				</div>
+				<div class="col-sm-2 reglog">
+					<button type="button" class="print_all" data-bs-toggle="modal" data-bs-target="#enterModal">Вход</button>
+				</div>
+				<div class="col-sm-2 reglog">
+					<button type="button" class="print_all" data-bs-toggle="modal" data-bs-target="#regModal">Регистрация</button>
+				</div>
+				
+			</div>
+
+			<!-- main_search -->
+			<div class="row main_search" data-aos="zoom-in" data-aos-duration="500">
+				<div class="col-sm top-0 start-0">
+					<form method="get" action="get_all_user">
+					<button class="print_all">Вывести всех</button>
+					</form>
+				</div>
+				<div class="col-sm-7 top-0 start-50 name_search">
+					<form method="get" action="fio_search">
+					<span>Найти фамилию</span>
+					<input name="fio" type="text" placeholder="Введите фамилию">
+						<button><img src="img/click.png" alt="send"></button>
+					</form>
+
+				</div>
+				<div class="col-sm-3 top-0 end-0">
+					<form method="post" action="read_post">
+					<button class="print_all">Вывести должности</button>
+					</form>
+				</div>
+			</div>
+
+			<div class="row main_search second_row" data-aos="zoom-in" data-aos-duration="500">
+				<div class="col-sm-4">
+					<form method="post" action="create_user">
+					<button class="print_all" type="button" data-bs-toggle="modal" data-bs-target="#addUser">Добавить пользователя</button>
+					</form>
+				</div>
+				<div class="col-sm-5">
+					<form method="get" action="read_all_files" >
+					<button class="print_all">Вывести все файлы</button>
+					</form>
+				</div>
+			</div>
+
+			<!-- main_table -->
+			<div class="row main_table" data-aos="zoom-in" data-aos-duration="500">
+				<table class="table table-hover align-middle table-sm table_conf">
+				  <thead class="table-dark">
+				    <tr>
+				      <th scope="col">#</th>
+				      <th scope="col">Fio</th>
+				      <th scope="col">Birth</th>
+				      <th scope="col">phone</th>
+				      <th scope="col">post</th>
+				      <th scope="col">department</th>
+				      <th scope="col">test3</th>
+				      <th scope="col">test4</th>
+				      <th scope="col">Controls</th>
+				    </tr>
+				  </thead>
+				  <tbody>
+				  {% for i in result %}
+				    <tr>
+				      <th scope="row">{{i.0}}</th>
+				      <td>{{i.1}}</td>
+				      <td>{{i.2}}</td>
+				      <td>{{i.3}}</td>
+				      <td>{{i.4}}</td>
+				      <td>{{i.5}}</td>
+				      <td>{{i.6}}</td>
+				      <td>{{i.7}}</td>
+				      <td>
+
+				      	<button class="control_button" type="button" data-bs-toggle="modal" data-bs-target="#editUser">Изменить</button>
+
+				      </td>
+
+				    {% endfor %}
+				  </tbody>
+				</table>
+			</div>
+
+			<div class="row main_table" data-aos="zoom-in" data-aos-duration="500">
+				<table class="table table-hover align-middle table-sm table_conf">
+				  <thead class="table-dark">
+				    <tr>
+				      <th scope="col">#</th>
+				      <th scope="col">name</th>
+				      <th scope="col">chief</th>
+				      <th scope="col">admin</th>
+
+				    </tr>
+				  </thead>
+				  <tbody>
+				  {% for i in res %}
+				    <tr>
+				      <th scope="row">{{i.0}}</th>
+				      <td>{{i.1}}</td>
+				      <td>{{i.2}}</td>
+				      <td>{{i.3}}</td>
+
+
+
+				      </td>
+
+				    {% endfor %}
+				  </tbody>
+				</table>
+			</div>
+
+<div class="row main_table" data-aos="zoom-in" data-aos-duration="500">
+				<table class="table table-hover align-middle table-sm table_conf">
+				  <thead class="table-dark">
+				    <tr>
+				      <th scope="col">#</th>
+				      <th scope="col">name</th>
+				      <th scope="col">format</th>
+				      <th scope="col">time</th>
+						<th scope="col">size</th>
+						<th scope="col">data</th>
+						<th scope="col">user</th>
+
+				    </tr>
+				  </thead>
+				  <tbody>
+				  {% for i in r %}
+				    <tr>
+				      <th scope="row">{{i.0}}</th>
+				      <td>{{i.1}}</td>
+				      <td>{{i.2}}</td>
+				      <td>{{i.3}}</td>
+				      <td>{{i.4}}</td>
+				      <td>{{i.5}}</td>
+				      <td>{{i.6}}</td>
+
+
+
+				      </td>
+
+				    {% endfor %}
+				  </tbody>
+				</table>
+			</div>
+			<!-- footer_search -->
+			<div class="row align-items-center main_search footer" data-aos="zoom-in" data-aos-duration="500">
+				<div class="col-sm-3">
+					<form action="add_dile" method="get">
+					<button type="button" class="print_all" data-bs-toggle="modal" data-bs-target="#addFileModal">Добавить файл</button>
+					</form>
+				</div>
+				<div class="col-sm-3">
+
+					<button type="button" class="print_all" data-bs-toggle="modal" data-bs-target="#exampleModal">Удалить файл</button>
+
+				</div>
+				<div class="col-sm-6 name_search">
+					<form method="get" action="file_search_size">
+					<span>Поиск файла</span>
+					<input name="file_size" type="search" placeholder="Введите размер файла">
+					<button><img src="img/click.png" alt="send"></button>
+					</form>
+
+
+				</div>
+			</div>
+			<div class="row footer_search" data-aos="zoom-in" data-aos-duration="500">
+				<div class="col-sm-6"></div>
+				<div class="col-sm-6 type_search">
+				<form action="file_search_type" method="get">
+					<span>Поиск файла</span>
+					<input name="file_type" type="search" placeholder="Введите тип файла">
+						<button><img src="img/click.png" alt="send"></button>
+				</form>
+
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-body">
+
+      	<!-- delete_file_modal -->
+		  <form method="get" action="delete_file">
+      	<div class="row  delete_file_modal">
+      		<div class="col-sm">
+
+      			<span>Введите название файла:</span>
+      			<input name="file_name" type="search">
+
+      		</div>
+      	</div>
+
+      	<div class="row delete_button">
+      		<div class="col-sm">
+      			<button>Удалить файл</button>
+      		</div>
+      	</div>
+		  </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Enter Modal -->
+	<form action="input" method="get">
+<div class="modal fade" id="enterModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-body enter_modal ">
+
+
+      	<div class="row login">
+      		<div class="col-sm">
+      			<span>Логин :</span>
+      			<input name="login" type="text">
+      		</div>
+      	</div>
+
+      	<div class="row pass">
+      		<div class="col-sm">
+      			<span>Пароль :</span>
+      			<input name="password" type="password">
+      		</div>
+      	</div>
+
+
+      	<div class="row complete">
+      		<div class="col-sm">
+      			<button>Вход</button>
+      		</div>
+      	</div>
+
+      </div>
+    </div>
+  </div>
+</div>
+	</form>
+
+<!-- REG Modal -->
+	<form method="get" action="registration" >
+<div class="modal fade" id="regModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-body enter_modal ">
+
+      	<div class="row login">
+      		<div class="col-sm">
+      			<span>Логин :</span>
+      			<input name="login" type="text">
+      		</div>
+      	</div>
+
+      	<div class="row pass">
+      		<div class="col-sm">
+      			<span>Пароль :</span>
+      			<input name="password" type="password">
+      		</div>
+      	</div>
+
+      	<div class="row complete">
+      		<div class="col-sm">
+      			<button>Зарегестрироваться</button>
+      		</div>
+      	</div>
+
+      </div>
+    </div>
+  </div>
+</div>
+	</form>
+
+<!-- addFileModal -->
+	<form action="add_file" method="get">
+<div class="modal fade" id="addFileModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-body addFile_modal ">
+
+      	<div class="row addFile">
+      		<div class="col-sm">
+      			<input name="file" type="file">
+				<input name="user" type="search" placeholder="Какому пользователю принадлежит файл">
+      		</div>
+      	</div>
+
+      	<div class="row addFileButton">
+      		<div class="col-sm">
+      			<button type="submit">Добавить файл</button>
+      		</div>
+      	</div>
+      </div>
+    </div>
+  </div>
+</div>
+	</form>
+<!-- editUser -->
+	<form method="get" action="update">
+<div class="modal fade" id="editUser" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-body editUserModal ">
+
+
+		        	<div class="row align-items-center editUserModalBlock">
+      		<div class="col-sm-2">
+      			<span>Кого изменять:</span>
+      		</div>
+      		<div class="col-sm-8">
+      			<input name="id" type="number">
+      		</div>
+      	</div>
+
+
+      	<div class="row align-items-center editUserModalBlock">
+      		<div class="col-sm-2">
+      			<span>ФИО:</span>
+      		</div>
+      		<div class="col-sm-8">
+      			<input name="fio" type="text">
+      		</div>
+      	</div>
+
+      	<div class="row align-items-center editUserModalBlock">
+      		<div class="col-sm-2">
+      			<span>Дата рождения:</span>
+      		</div>
+      		<div class="col-sm-8">
+      			<input name="birth" type="text">
+      		</div>
+      	</div>
+
+      	<div class="row align-items-center editUserModalBlock">
+      		<div class="col-sm-2">
+      			<span>Отдел:</span>
+      		</div>
+      		<div class="col-sm-8">
+      			<input name="user_department" type="text">
+      		</div>
+      	</div>
+
+      	<div class="row align-items-center editUserModalBlock">
+      		<div class="col-sm-2">
+      			<span>Должность:</span>
+      		</div>
+      		<div class="col-sm-8">
+      			<input name="user_post" type="text">
+      		</div>
+      	</div>
+
+      	<div class="row align-items-center editUserModalBlock">
+      		<div class="col-sm-2">
+      			<span>Телефон:</span>
+      		</div>
+      		<div class="col-sm-8">
+      			<input name="phone" type="text">
+      		</div>
+      	</div>
+
+      	<div class="row align-items-center">
+      		<div class="col-sm">
+      			<button type="submit">Изменить</button>
+      		</div>
+      	</div>
+
+      </div>
+    </div>
+  </div>
+</div>
+	</form>
+<!-- deleteUser -->
+	  <form method="get" action="delete">
+     	<div class="row  delete_user_modal">
+    		<div class="col-sm">
+     			<span>Введите id пользователя:</span>
+     			<input name="user_id" type="search">
+     		</div>
+     	</div>
+      	<div class="row delete_button">
+     		<div class="col-sm">
+     			<button>Удалить пользователя</button>
+     		</div>
+     	</div>
+	  </form>
+     </div>
+   </div>
+ </div>
+</div>
+
+<!-- addUser -->
+	<form action="create" method="get">
+<div class="modal fade" id="addUser" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-body editUserModal ">
+
+      	<div class="row align-items-center editUserModalBlock">
+      		<div class="col-sm-2">
+      			<span>ФИО:</span>
+      		</div>
+      		<div class="col-sm-8">
+      			<input name="fio" type="text">
+      		</div>
+      	</div>
+
+      	<div class="row align-items-center editUserModalBlock">
+      		<div class="col-sm-2">
+      			<span>Дата рождения:</span>
+      		</div>
+      		<div class="col-sm-8">
+      			<input name="birth" type="text">
+      		</div>
+      	</div>
+
+      	<div class="row align-items-center editUserModalBlock">
+      		<div class="col-sm-2">
+      			<span>Отдел:</span>
+      		</div>
+      		<div class="col-sm-8">
+      			<input name="department" type="text">
+      		</div>
+      	</div>
+
+      	<div class="row align-items-center editUserModalBlock">
+      		<div class="col-sm-2">
+      			<span>Должность:</span>
+      		</div>
+      		<div class="col-sm-8">
+      			<input name="post" type="text">
+      		</div>
+      	</div>
+
+      	<div class="row align-items-center editUserModalBlock">
+      		<div class="col-sm-2">
+      			<span>Телефон:</span>
+      		</div>
+      		<div class="col-sm-8">
+      			<input name="phone" type="text">
+      		</div>
+      	</div>
+
+      	<div class="row">
+      		<div class="col-sm">
+      			<button type="submit">Добавить пользователя</button>
+      		</div>
+      	</div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+	</form>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+	<!-- AOS JS -->
+	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+	<script>
+  		AOS.init();
+	</script>
+</body>
+</html>
+
+

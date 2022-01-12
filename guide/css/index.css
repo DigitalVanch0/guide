@@ -1,0 +1,402 @@
+body {
+  background: url(../img/bg.png) no-repeat;
+  background-size: cover;
+}
+
+.mobile_search {
+  padding-bottom: 108px;
+}
+.mobile_search .col_bg {
+  padding-left: 15px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 647px;
+  background-color: #fff;
+}
+.mobile_search span {
+  letter-spacing: -0.03em;
+  color: #000;
+  font-family: "Tenor Sans", sans-serif;
+  font-size: 24px;
+  margin-right: 8px;
+}
+.mobile_search input {
+  padding-left: 10px;
+  letter-spacing: -0.03em;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  width: 370px;
+  font-size: 14px;
+  background-color: rgba(0, 0, 0, 0.6);
+  border: 2px solid black;
+  color: #fff;
+  font-family: "Tenor Sans", sans-serif;
+  border-radius: 10px;
+}
+.mobile_search input:hover {
+  border: 2px solid #000;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.mobile_search input:active {
+  border: 2px solid #000;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.mobile_search input::-webkit-input-placeholder {
+  color: #fff;
+}
+.mobile_search button {
+  border: none;
+  background: none;
+}
+.mobile_search button img {
+  width: 24px;
+  height: 24px;
+  background: none;
+}
+.mobile_search button:focus {
+  outline: none;
+}
+.mobile_search .reglog button {
+  padding-right: 30px;
+  padding-left: 30px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: #fff;
+  text-align: center;
+  background: #fff;
+  letter-spacing: -0.03em;
+  color: #000;
+  font-family: "Tenor Sans", sans-serif;
+  font-size: 24px;
+  margin-right: 8px;
+}
+.mobile_search .reglog button:hover {
+  color: #fff;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  background-color: #000;
+}
+.mobile_search .reglog button:focus {
+  outline: none;
+}
+
+.main_search .addFile {
+  color: #fff;
+}
+.main_search .print_all {
+  border: none;
+  padding: 15px 20px;
+  font-family: "Tenor Sans", sans-serif;
+  color: #000;
+  letter-spacing: -0.03em;
+  font-size: 24px;
+  background-color: #fff;
+}
+.main_search .print_all:hover {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  color: #fff;
+  background-color: #000;
+}
+.main_search .print_all:focus {
+  outline: none;
+}
+.main_search .name_search {
+  padding-bottom: 15px;
+  padding-top: 15px;
+  background: #fff;
+}
+.main_search .name_search span {
+  letter-spacing: -0.03em;
+  color: #000;
+  font-family: "Tenor Sans", sans-serif;
+  font-size: 24px;
+  margin-right: 8px;
+}
+.main_search .name_search input {
+  padding-left: 10px;
+  letter-spacing: -0.03em;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  width: 370px;
+  font-size: 14px;
+  background-color: rgba(0, 0, 0, 0.6);
+  border: 2px solid black;
+  color: #fff;
+  font-family: "Tenor Sans", sans-serif;
+  border-radius: 10px;
+}
+.main_search .name_search input:hover {
+  border: 2px solid #000;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.main_search .name_search input:active {
+  border: 2px solid #000;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.main_search .name_search input::-webkit-input-placeholder {
+  color: #fff;
+}
+.main_search .name_search button {
+  border: none;
+  background: none;
+}
+.main_search .name_search button img {
+  width: 24px;
+  height: 24px;
+  background: none;
+}
+.main_search .name_search button:focus {
+  outline: none;
+}
+
+.second_row {
+  padding-top: 20px;
+}
+
+.main_table {
+  margin-top: 20px;
+  padding-top: 15px;
+  margin-bottom: 20px;
+  background-color: #fff;
+}
+.main_table .control_button {
+  border: none;
+  padding: 5px 10px;
+  font-family: "Tenor Sans", sans-serif;
+  color: #fff;
+  letter-spacing: -0.03em;
+  font-size: 18px;
+  background-color: #000;
+  border: 1px solid #000;
+}
+.main_table .control_button:hover {
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  color: #000;
+  background-color: #fff;
+}
+
+.footer_search {
+  padding-top: 20px;
+}
+.footer_search .type_search {
+  padding-bottom: 15px;
+  padding-top: 15px;
+  background: #fff;
+}
+.footer_search span {
+  letter-spacing: -0.03em;
+  color: #000;
+  font-family: "Tenor Sans", sans-serif;
+  font-size: 24px;
+  margin-right: 8px;
+}
+.footer_search input {
+  padding-left: 10px;
+  letter-spacing: -0.03em;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  width: 370px;
+  font-size: 14px;
+  background-color: rgba(0, 0, 0, 0.6);
+  border: 2px solid black;
+  color: #fff;
+  font-family: "Tenor Sans", sans-serif;
+  border-radius: 10px;
+}
+.footer_search input:hover {
+  border: 2px solid #000;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.footer_search input:active {
+  border: 2px solid #000;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.footer_search input::-webkit-input-placeholder {
+  color: #fff;
+}
+.footer_search button {
+  border: none;
+  background: none;
+}
+.footer_search button img {
+  width: 24px;
+  height: 24px;
+  background: none;
+}
+.footer_search button:focus {
+  outline: none;
+}
+
+.delete_file_modal {
+  text-align: center;
+}
+.delete_file_modal span {
+  font-family: "Tenor Sans", sans-serif;
+  font-size: 24px;
+  margin-right: 20px;
+}
+.delete_file_modal input {
+  padding-left: 10px;
+  letter-spacing: -0.03em;
+  width: 370px;
+  font-size: 24px;
+  background-color: rgba(0, 0, 0, 0.6);
+  border: 2px solid black;
+  color: #fff;
+  font-family: "Tenor Sans", sans-serif;
+  border-radius: 10px;
+}
+
+.delete_button {
+  padding-top: 30px;
+  text-align: center;
+}
+.delete_button button {
+  border: none;
+  padding: 10px 50px;
+  font-family: "Tenor Sans", sans-serif;
+  color: #fff;
+  letter-spacing: -0.03em;
+  font-size: 18px;
+  background-color: #000;
+  border: 1px solid #000;
+}
+.delete_button button:hover {
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  color: #000;
+  background-color: #fff;
+}
+
+.enter_modal {
+  text-align: center;
+  text-align: center;
+}
+.enter_modal .login {
+  margin-bottom: 20px;
+}
+.enter_modal .login span {
+  font-family: "Tenor Sans", sans-serif;
+  font-size: 24px;
+  margin-right: 20px;
+}
+.enter_modal .login input {
+  padding-left: 10px;
+  letter-spacing: -0.03em;
+  width: 370px;
+  font-size: 24px;
+  background-color: rgba(0, 0, 0, 0.6);
+  border: 2px solid black;
+  color: #fff;
+  font-family: "Tenor Sans", sans-serif;
+  border-radius: 10px;
+}
+.enter_modal .pass {
+  margin-bottom: 20px;
+}
+.enter_modal .pass span {
+  font-family: "Tenor Sans", sans-serif;
+  font-size: 24px;
+  margin-right: 5px;
+}
+.enter_modal .pass input {
+  padding-left: 10px;
+  letter-spacing: -0.03em;
+  width: 370px;
+  font-size: 24px;
+  background-color: rgba(0, 0, 0, 0.6);
+  border: 2px solid black;
+  color: #fff;
+  font-family: "Tenor Sans", sans-serif;
+  border-radius: 10px;
+}
+.enter_modal .complete button {
+  border: none;
+  padding: 10px 50px;
+  font-family: "Tenor Sans", sans-serif;
+  color: #fff;
+  letter-spacing: -0.03em;
+  font-size: 18px;
+  background-color: #000;
+  border: 1px solid #000;
+}
+.enter_modal .complete button:hover {
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  color: #000;
+  background-color: #fff;
+}
+
+.addFile_modal {
+  text-align: center;
+}
+.addFile_modal .addFile {
+  font-family: "Tenor Sans", sans-serif;
+}
+.addFile_modal .addFileButton {
+  padding-top: 20px;
+}
+.addFile_modal .addFileButton button {
+  border: none;
+  padding: 10px 30px;
+  font-family: "Tenor Sans", sans-serif;
+  color: #fff;
+  letter-spacing: -0.03em;
+  font-size: 24px;
+  background-color: #000;
+  border: 1px solid #000;
+}
+.addFile_modal .addFileButton button:hover {
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  color: #000;
+  background-color: #fff;
+}
+
+.editUserModal {
+  text-align: center;
+}
+.editUserModal button {
+  border: none;
+  padding: 10px 50px;
+  font-family: "Tenor Sans", sans-serif;
+  color: #fff;
+  letter-spacing: -0.03em;
+  font-size: 18px;
+  background-color: #000;
+  border: 1px solid #000;
+}
+.editUserModal button:hover {
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  color: #000;
+  background-color: #fff;
+}
+.editUserModal span {
+  font-family: "Tenor Sans", sans-serif;
+  font-size: 24px;
+  margin-right: 20px;
+}
+.editUserModal input {
+  padding-left: 10px;
+  letter-spacing: -0.03em;
+  width: 370px;
+  font-size: 24px;
+  background-color: rgba(0, 0, 0, 0.6);
+  border: 2px solid black;
+  color: #fff;
+  font-family: "Tenor Sans", sans-serif;
+  border-radius: 10px;
+}
+.editUserModal .editUserModalBlock {
+  margin-bottom: 30px;
+}
+/*# sourceMappingURL=index.css.map */
